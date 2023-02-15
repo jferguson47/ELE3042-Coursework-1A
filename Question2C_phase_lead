@@ -5,7 +5,9 @@ Plant = simplify(expand(Plant1))        % Simplifyingh and expanding Plant
 comp1 = (s+2)/(s+6);                  % OLTF of plant using symbol s
 comp = simplify(expand(comp1))        % Simplifyingh and expanding Plant   
 
-plant_comp = Plant * comp
+K1=0.984
+
+plant_comp = K1*Plant * comp
 
 
 [num,den] = numden(plant_comp);               % Obtaining num and den from plant      
@@ -18,12 +20,12 @@ figure('Name','Root Locus of Compensated system')
 rlocus(OLTF)        % plotting root locus
 
 
-K = 18.9; % from root locus graph
+COMP_K = 18.9; % from root locus graph
 H = 1; % Unity Feedback
 
 
 
-CLTF_sym = (K*Plant*comp)/(1+(K*Plant*H*comp))      % Symbolic version if CLTF
+CLTF_sym = (COMP_K*K1*Plant*comp)/(1+(COMP_K*K1*Plant*H*comp))      % Symbolic version if CLTF
 
 CLTF_sym = simplify(expand(CLTF_sym));          % simplifying CLTF symbolic 
 
