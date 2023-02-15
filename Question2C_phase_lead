@@ -20,7 +20,7 @@ figure('Name','Root Locus of Compensated system')
 rlocus(OLTF)        % plotting root locus
 
 
-COMP_K = 18.9; % from root locus graph
+COMP_K = 19.2; % from root locus graph
 H = 1; % Unity Feedback
 
 
