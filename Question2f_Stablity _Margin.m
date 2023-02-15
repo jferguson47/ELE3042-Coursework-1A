@@ -15,7 +15,7 @@ comp1 = (s+2)/(s+6);                  % OLTF of plant using symbol s
 comp = simplify(expand(comp1))        % Simplifyingh and expanding Plant   
 
 
-K1 = 0.984; % Found from Q2B
+K1 = 28.6; % Found from Q2D
 plant_comp = K1*Plant * comp
 
 
